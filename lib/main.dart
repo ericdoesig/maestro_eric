@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
       home: MyHomePage(),
     );
@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter UI Layouts Home Page'),
+          title: Text('Black Keys'),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(
@@ -59,10 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
               // The ratio between the width and height of items
               childAspectRatio: 0.75,
               // List of items widgets
-              children: items.map<Widget>((Item item) => _ItemGridCellWidget(item)).toList(),
+              children: items
+                  .map<Widget>((Item item) => _ItemGridCellWidget(item))
+                  .toList(),
             ),
             // ListView tab content Widget
-            ListView.builder(itemCount: items.length, itemBuilder: (BuildContext context, int position) => _ItemListCellWidget(items[position]))
+            ListView.builder(
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int position) =>
+                    _ItemListCellWidget(items[position]))
           ],
         ),
       ),
@@ -89,7 +94,7 @@ class _ItemGridCellWidget extends StatelessWidget {
         footer: GridTileBar(
           title: Text(_item.name),
           subtitle: Text(_item.description),
-          backgroundColor: Colors.black38,
+          backgroundColor: Colors.blueGrey,
         ),
         child: GestureDetector(
           onTap: () => _selectItem(context),
@@ -140,8 +145,8 @@ class _ItemListCellWidget extends StatelessWidget {
         tag: _item.name,
         child: Image.network(
           _item.imageUrl,
-          width: 50,
-          height: 50,
+          width: 150,
+          height: 150,
           fit: BoxFit.cover,
         ),
       ),
@@ -175,38 +180,43 @@ class _ItemFullScreenWidget extends StatelessWidget {
 
 List<Item> items = [
   Item(
-    "https://i.pinimg.com/originals/df/0a/3e/df0a3e2ec30abb1c92d145ef165b714f.gif",
-    "Nature 1",
-    """Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "Intro to black keys",
+    """In this lesson we will learn what the black keys how they are and what they are used for.""",
   ),
   Item(
-    "https://i.pinimg.com/originals/40/c3/be/40c3bef82a8077e5c872808eefff5c6d.png",
-    "Nature 2",
-    "Description",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "Black keys",
+    """The black keys are also known as the sharp keys or the flat keys. These keys are the higher pitch version of their white keys""",
   ),
   Item(
-    "https://image.freepik.com/free-vector/flat-design-baby-shark-cartoon-style_52683-36255.jpg",
-    "Nature 3",
-    "Description",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "Black keys pt 2",
+    """In total there is about 5 sharp keys including C, D, F,G and A. C being the lowest pitch and the A being the highest out of the 5 """,
   ),
   Item(
-    "https://image.freepik.com/free-vector/fairytale-concept-with-child-reading_23-2148472951.jpg",
-    "Sensetpier",
-    "Description",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "C sharp",
+    """This key is the first sharp key from the left and the pitch is the lowest side .""",
   ),
   Item(
-    "https://img.freepik.com/free-vector/spring-landscape-scene_23-2148860692.jpg",
-    "Nature 5",
-    "Description",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "D sharp",
+    """The next black key that we will talk about is D sharp also known as E flat.""",
   ),
   Item(
-    "https://pw.artfile.me/wallpaper/20-03-2017/650x366/vektornaya-grafika-priroda--nature-sneg--1143282.jpg",
-    "Night Nature",
-    "Description",
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "F sharp",
+    """This key is the fourth sharp key and the pitch closer to the right and also located after a gap .""",
   ),
+  Item(
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "G sharp",
+    """This key is the fourth sharp key from the left and the pitch is on the higher side .""",
+  ),
+  Item(
+    "http://www.piano-keyboard-guide.com/wp-content/uploads/2018/12/Piano-Keys-and-Notes-Piano-Keyboard-Diagram-1.jpg",
+    "A sharp",
+    """This key is the fifth sharp key from the left and the pitch is also on the higher side and dead middle of the bpard. .""",
+  )
 ];
